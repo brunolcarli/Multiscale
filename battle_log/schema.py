@@ -1,11 +1,12 @@
 import graphene
 from django.conf import settings
-
+from battle_log.resolvers import parse_log_to_table
+from battle_log.types import DynamicScalar
 
 
 class BattleLogTable(graphene.ObjectType):
-    data = graphene.List(graphene.String)
-
+    data = DynamicScalar()
+    columns = graphene.List(graphene.String)
 
 
 class Query:
@@ -22,7 +23,8 @@ class ParseBattleLog(graphene.relay.ClientIDMutation):
         log_text = graphene.String(required=True)
 
     def mutate_and_get_payload(self, info, **kwargs):
-        return ParseBattleLog(['foo'])
+        data, columns = parse_log_to_table(kwargs['log_text'])
+        return ParseBattleLog(BattleLogTable(data=data, columns=columns))
 
 
 class Mutation:
