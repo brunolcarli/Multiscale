@@ -65,7 +65,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:8000',
     'http://localhost:8080',
-    'http://localhost:11000',
+    'http://localhost:7676',
     'http://localhost:80',
     'http://localhost:443'
 ]
