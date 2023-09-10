@@ -10,7 +10,7 @@
 
 <div align="center">
 
-> ![Version badge](https://img.shields.io/badge/version-0.0.2-silver.svg)
+> ![Version badge](https://img.shields.io/badge/version-0.0.3-silver.svg)
 > ![GraphQl Badge](https://badgen.net/badge/icon/graphql/pink?icon=graphql&label)
 
 This API aims to parse and convert a Pokémon Shwdown battle replay log into a csv file to expand the possibilities of battle data analysis.
